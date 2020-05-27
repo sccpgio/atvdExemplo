@@ -1,9 +1,12 @@
 // AÇÃO DE CADA BOTÃO
-$(document).on("click","Alerta",function(){
+function retorno(){
+  
+}
+$(document).on("click","#alerta",function(){
   navigator.notification.alert("Testando!",retorno,"Alerta","Ok");
 });
 
-$(document).on("click","confirm",function(){
+$(document).on("click","#confirm",function(){
   function confirma (buttonIndex){
     if (buttonIndex == 1) {
        navigator.notification.confirm("Escolheu o 1");
@@ -14,16 +17,16 @@ $(document).on("click","confirm",function(){
   navigator.notification.confirm("Escolha 1 ou 2",confirma,"Escolha",['1','2']);
 });
 
-$(document).on("click","beep",function(){
+$(document).on("click","#beep",function(){
   navigator.notification.beep(2);
 });
 
-$(document).on("click","vibrar",function(){
+$(document).on("click","#vibrar",function(){
   navigator.vibrate(3000);
 });
 
 // AÇÃO DO CLICK
-$(document).on("click","local",function(){
+$(document).on("click","#local",function(){
   var onSuccess = function(position) {
     MostraMapa(position.coords.latitude, position.coords.longitude);
     };
